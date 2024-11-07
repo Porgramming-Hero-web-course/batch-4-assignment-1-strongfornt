@@ -2,7 +2,7 @@
 {
     const calculateShapeArea = (area) => {
         if (area.shape === "circle") {
-            return Math.PI * Math.pow(area.radius, 2);
+            return Math.PI * area.radius ** 2;
         }
         else if (area.shape === "rectangle") {
             return area.width * area.height;
