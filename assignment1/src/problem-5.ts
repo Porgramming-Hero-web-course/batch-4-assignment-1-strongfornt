@@ -13,6 +13,6 @@
   };
 
   const name = getProperty(person, "name");
- 
+  
   
 }

@@ -11,7 +11,10 @@
     type updateProfile = (profile: Profile, updates: Partial<Profile>) => Profile;
 
     const updateProfile: updateProfile =(profile, updates) => {
+       
         return {...profile,...updates}
+        
+        
     }
 
     const myProfile: Profile = {
@@ -21,6 +24,9 @@
       };
       
       const updatedProfile = updateProfile(myProfile, { age: 26});
+      
+   
+      
      
       
 
