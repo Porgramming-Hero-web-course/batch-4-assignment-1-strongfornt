@@ -4,16 +4,20 @@
   type countWordOccurrences = (sentence: string, word: string) => any;
 
   const countWordOccurrences: countWordOccurrences = (sentence, word) => {
-    const lowerCaseSentence:string = sentence.toLowerCase();
-    const lowerCaseWord:string = word.toLowerCase();
+    const lowerCaseSentence: string = sentence.toLowerCase();
+    const lowerCaseWord: string = word.toLowerCase();
 
-    const cleanedSentence = lowerCaseSentence.replace(/[^a-z\s]/g, '');
-    
-    const words:string[] = cleanedSentence.split(" ");
+    const cleanedSentence = lowerCaseSentence.replace(/[^a-z\s]/g, "");
+
+    const words: string[] = cleanedSentence.split(" ");
 
     let count: number = 0;
     for (const w of words) {
-      if (w === lowerCaseWord) {
+      // w === lowerCaseWord ---
+      // Instructor specified to use partial matching, so changed from strict equality (===) to .includes().
+      // This allows words like "Successfully" to match "success."
+
+      if (w.includes(lowerCaseWord)) {
         count++;
       }
     }
@@ -25,7 +29,5 @@
     "TypeScript is great. I love TypeScript!",
     "typescript"
   );
-    
 
-  
 }
