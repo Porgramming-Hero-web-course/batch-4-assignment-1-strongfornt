@@ -12,7 +12,9 @@
     height: number;
   }
 
-  const calculateShapeArea = (area: Circle | Rectangle): number => {
+  type calculateShapeArea = (area: Circle | Rectangle) => number
+  
+  const calculateShapeArea:calculateShapeArea = (area) => {
     if (area.shape === "circle") {
       return Math.PI * area.radius ** 2;
     } else if (area.shape === "rectangle") {
@@ -22,6 +24,7 @@
     throw new Error("Unknown shape");
   };
 
+  
   const circleArea = calculateShapeArea({ shape: "circle", radius: 5 });
   const rectangleArea = calculateShapeArea({
     shape: "rectangle",
@@ -29,5 +32,5 @@
     height: 6,
   });
 
-  
+
 }
