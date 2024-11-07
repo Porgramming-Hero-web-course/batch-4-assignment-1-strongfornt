@@ -14,14 +14,13 @@
         return {...profile,...updates}
     }
 
-
     const myProfile: Profile = {
         name: "John Doe",
         age: 30,
         email: "johndoe@example.com",
       };
       
-      const result = updateProfile(myProfile, { age: 26});
+      const updatedProfile = updateProfile(myProfile, { age: 26});
      
       
 
