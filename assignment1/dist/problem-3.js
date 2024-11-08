@@ -7,11 +7,13 @@
         const words = cleanedSentence.split(" ");
         let count = 0;
         for (const w of words) {
-            if (w === lowerCaseWord) {
+            // w === lowerCaseSentence  ----------   //if you want strict matching
+            if (w.includes(lowerCaseWord)) {
                 count++;
             }
         }
         return count;
     };
     const result = countWordOccurrences("TypeScript is great. I love TypeScript!", "typescript");
+    console.log(result);
 }
